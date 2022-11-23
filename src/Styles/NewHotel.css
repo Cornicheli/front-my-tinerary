@@ -1,0 +1,68 @@
+.generalContainForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images5.alphacoders.com/349/349822.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.Citytitle{
+    font-size: 1.5;
+    margin: .3rem;
+    color: rgb(255, 255, 255);
+}
+.formHotel{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 65rem;
+    height: 35rem;
+}
+.form_input{
+    align-items: center;
+    width: 80%;
+}
+.formCity{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+	text-align: center;
+	border-radius: 5px;
+	background: #1f130c;
+    opacity: 0.8;
+    border: solid 4px grey;
+	border-radius: 1rem;
+}
+
+.form-Citybody{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    font-family: 'Playfair Display', serif;
+	font-size: 3.5em;
+    gap: 1rem;
+}
+.submit-newHotel{
+    width: 100%;
+    height: 3rem;
+    border-radius: 3em;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.485);
+    color: black;
+    font-weight: 700;
+    padding: .7rem;
+    font-size: 1.2rem;
+    border: solid 5px black;
+}
+.submit-newHotel:hover{
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.485);
+    background-color: black;
+    border: solid 3px white;
+}

@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.error-in-404{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  opacity: 0.2;
+  border-radius: 1rem;
+}
+
+.container-404{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/01/17155044/Avion-despegando.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 75vh;
+}
+.mainbox {
+  display: flex;
+  background-color: #1085a91b;
+  min-height: 64vh;
+  width: 34rem;
+  position: relative;
+  border-radius: 2em;
+  box-shadow: rgb(14 4 45 / 72%) 0px 5px 15px;
+  margin: 1rem;
+  border:solid 4px black ;
+  border-radius: 1rem;
+}
+
+    .err {
+      color: #ff0000;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10rem;
+      position:absolute;
+      left: 13%;
+      top: 8%;
+      text-shadow: 1px 4px 2px rgba(24,129,195,0.64);
+    }
+
+  .far {
+    font-family: 'Nunito Sans', sans-serif;
+    position: absolute;
+    font-size: 10rem;
+    left: 43%;
+    top: 8%;
+    color: #ff0000;
+    text-shadow: 1px 4px 2px rgba(24,129,195,0.64);
+  }
+
+  .err2 {
+      color: #ff0000;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 10rem;
+      position:absolute;
+      left: 73%;
+      top: 8%;
+      text-shadow: 1px 4px 2px rgba(24,129,195,0.64);
+    }
+
+  .msg {
+    color: #000000;
+      text-align: center;
+      font-size: 1.5rem;
+      font-family: 'Nunito Sans', sans-serif;
+      position:absolute;
+      left: 2%;
+      top: 45%;
+      width: 95%;
+      font-weight: 800;
+}
+.msg1 {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+      text-align: center;
+      font-size: 1.9rem;
+      font-family: 'Nunito Sans', sans-serif;
+      position:absolute;
+      left: 2%;
+      top: 77%;
+      width: 95%;
+    padding: 2px;
+}
+
+.Home-btn {
+    transition: background-color .5s;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 5px solid #ffffff6f;
+    width: 80%;
+    border-radius: 1em;
+    font-size: 3rem;
+    text-decoration: none;
+  }
+
+  .Home-btn:hover {
+    background-color: rgba(255, 254, 253, 0.467);
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    border: 5px solid #000000d0;
+  }
