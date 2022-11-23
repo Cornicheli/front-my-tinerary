@@ -1,0 +1,94 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.cont-card-hotel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://wallpapers.com/images/file/omnia-night-club-bar-party-d17al9m73c3im6oe.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    min-height: 90vh;
+}
+.cont-hotel-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50rem;
+    min-height: 40rem;
+    margin: 1.5rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.92);
+}
+.cont-complet-hotel{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.cont-text-hotel{
+    display: flex;
+}
+.cont-img-hotel{
+    display: flex;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+.img-hotel{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    border: solid 4px black;
+}
+.cont-text-hotel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+.text-hotel{
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 1024px){
+    .cont-hotel-card{
+      width: 45rem;
+    }
+    .filter-hotel{
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 768px){
+    .cont-hotel-card{
+      width: 35rem;
+    }
+  }
+  @media screen and (max-width: 630px){
+    .cont-hotel-card{
+      width: 30rem;
+    }
+  }
+  @media screen and (max-width: 525px){
+    .cont-hotel-card{
+      width: 25rem;
+    }
+  }
+  @media screen and (max-width: 440px){
+    .cont-hotel-card{
+      width: 20rem;
+    }
+  }
+  @media screen and (max-width: 350px){
+    .cont-hotel-card{
+      width: 17rem;
+    }
+  }
