@@ -20,7 +20,7 @@ return(
 
                     <NavLink to="/">
                         <li className="b">
-                            <a className="ancorLink"  href="-">{n5}</a>
+                            <a className="ancorLink" href="-">{n5}</a>
                         </li>
                     </NavLink>
 
@@ -38,5 +38,4 @@ return(
     </div>
 );
 }
-
 export {ButtonNav1}

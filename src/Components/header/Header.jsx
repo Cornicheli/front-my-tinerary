@@ -14,7 +14,7 @@ function Header() {
                 </div>
                 <div className="buton-nav-header">
                     <h2 className="title">Add a new City or Hotel !</h2>
-                    <ButtonNav2 n7="New Hotel" n9="My Hotels" />
+                    <ButtonNav2 n7="New Hotel" n8="My Shows" n9="My Hotels"/>
                 </div>
                 <div className="buton-nav-header">
                     <h2 className="title">Login - Register</h2>

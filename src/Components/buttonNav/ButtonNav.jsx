@@ -32,7 +32,7 @@ function ButtonNav(props) {
                     </NavLink>
                     <NavLink to="/signup">
                         <li className="b">
-                            <a className="ancorLink"  href="-">{n2}</a>
+                            <a className="ancorLink" href="-">{n2}</a>
                         </li>
                     </NavLink>
           </ul>
