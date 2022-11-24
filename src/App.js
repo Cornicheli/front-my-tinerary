@@ -9,6 +9,7 @@ import SignUp from './Pages/SignUp'
 import HomeComplete  from './Components/layouts/HomeComplete'
 import DetailsHotel from "./Components/detailsHotel/DetailsHotel";
 import MyHotels from "./Components/hotelByUser/MyHotels";
+import MyShows from "./Pages/myShows"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/detailsHotel/:idh' element={<DetailsHotel/>}/>
           <Route path="/new-hotel" element={<NewHotel />}/>
           <Route path="/myhotels" element={<MyHotels/>} />
+          <Route path="/myshows" element={<MyShows/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
         </MainComplete>

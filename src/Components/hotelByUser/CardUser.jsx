@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { EditCard } from "./EditCard";
-import '../../Styles/myHotels.css'
+import React,{useState} from 'react'
+import {EditCard} from './EditCard'
 
-export default function Cards({ name, photo, description, id }) {
-  let [push, setPush] = useState(false);
+export default function Cards({name, photo, description,id}) {
+    
+let [push,setPush]= useState(false)
 
-  return (
+return (
   <div className="cont-main-myhotels">
     <div className="main-myhotels">
       <div className="cont-card-myhotels">
@@ -13,7 +13,7 @@ export default function Cards({ name, photo, description, id }) {
         <article className="cont-text-myhotels">
           <h4 className="text-title">{name}</h4>
           <p className="text-title">capacity : {description}</p>
-          <div className="">
+          <div>
             <button className="button-edit-myhotels" value={id} onClick={() => setPush(!push)}>
               Edit
             </button>
@@ -26,3 +26,4 @@ export default function Cards({ name, photo, description, id }) {
   </div>
   );
 }
+
