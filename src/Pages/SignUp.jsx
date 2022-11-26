@@ -58,7 +58,6 @@ export default function Input() {
           <form ref={formRef}>
             <label htmlFor="text">Name</label>
             <input name="name" type="text" placeholder="Name" ref={nameRef} />
-
             <label htmlFor="text">LastName</label>
             <input
               name="lastName"
