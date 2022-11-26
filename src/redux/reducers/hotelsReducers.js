@@ -12,10 +12,6 @@ const hotelsReducers = createReducer(initialState, (builder)=>{
         return{...state, listsHotels:action.payload.listsHotels}
     })
 
-    builder.addCase(hotelActions.getHotelsNames.fulfilled, function (state, action) {
-        return { ...state, listsHotels:action.payload.listsHotels }
-    })
-
     builder.addCase(hotelActions.getHotelsFilters.fulfilled,(state,action)=>{
         return {...state, listsHotels:action.payload.listsHotels}
     })

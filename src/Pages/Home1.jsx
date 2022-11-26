@@ -8,7 +8,7 @@ return (
     <>
         <main className="body-home1-forro-del-orto">
             <div>
-                <h1>Turisfront</h1>
+                <h1>My Tinerary</h1>
             </div>
             <div className='box-botom'>
                 <NavLink to='/hotels'>

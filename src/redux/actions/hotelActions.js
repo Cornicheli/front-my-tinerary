@@ -16,36 +16,24 @@ let getHotels = createAsyncThunk('getHotels', async()=>{
     }
 })
 
-let getHotelsNames = createAsyncThunk('getHotelsNames', async(name)=>{
-    try{
-        const resp = await axios.get(`${BASE_URL}/api/hotels/?name={name}`)
-        console.log(resp)
-        return{
-            listsHotels: resp.data.response
-        }
-    }
-    catch(error){
-        console.log(error)
-    }
-})
-
 let getHotelsFilters = createAsyncThunk('getHotelsFilters', async(filter)=>{
     try{
-        const resp = await axios.get(`${BASE_URL}/api/hotels/?name={name}&order=${filter.order}`)
+        const resp = await axios.get(`${BASE_URL}/api/hotels/?name=${filter.name}&order=${filter.order}`)
         console.log(resp)
         return{
             listsHotels: resp.data.response
         }
     }
     catch(error){
-        console.log(error)
+        return{
+            listsHotels: error.resp.data.response
+        }
     }
 })
 
 
 const hotelActions ={
     getHotels,
-    getHotelsNames,
     getHotelsFilters,
 }
 export default hotelActions
