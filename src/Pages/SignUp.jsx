@@ -1,107 +1,101 @@
-import React, { useState } from "react";
+import { React, useRef } from "react";
 import "../Styles/SignUp.css";
-import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../api/url";
+import axios from "axios";
+import Swal from "sweetalert2";
 
-// funcionando correcto
+export default function Input() {
+  const nameRef = useRef();
+  const lastNameRef = useRef();
+  const photoRef = useRef();
+  const ageRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const formRef = useRef();
 
-export default function SignUp() {
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
+  async function saveData(e) {
     e.preventDefault();
-    localStorage.setItem(
-      "user",
-      JSON.stringify({ name, surName, country, mobileNumber, mail, password })
-    );
-    navigate("login");
-  };
+    let userValue = {
+      name: nameRef.current.value,
+      lastName: lastNameRef.current.value,
+      photo: photoRef.current.value,
+      age: ageRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
 
-  const [name, setName] = useState("");
-  const [surName, setSurName] = useState("");
-  const [country, setCountry] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [mail, setMail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const submit = () => {
-    if (
-      name === "" ||
-      surName === "" ||
-      country === "" ||
-      mobileNumber === "" ||
-      mail === "" ||
-      password === ""
-    ) {
-    } else {
-      localStorage.setItem("name", name);
-      localStorage.setItem("surName", surName);
+    try {
+      let res = await axios.post(`${BASE_URL}/api/auth/`, userValue);
+      console.log(res);
+      if (res.data.success) {
+        Swal.fire({
+          icon: "success",
+          title: "The user has been created successfully!",
+          text: `Activate your account login in your email.`,
+        });
+        formRef.current.reset();
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "We found an error...",
+          text: `Errors: ${res.data.message.join(", ")}`,
+        });
+      }
+    } catch (err) {
+      Swal.fire({
+        icon: "error",
+        title: "Error, the user email, it s already exist",
+        text: err.message,
+      });
     }
-  };
+  }
 
   return (
     <>
       <div className="content-singup">
         <div className="content-form">
           <h2>Sign Up</h2>
-          <form onSubmit={handleSubmit}>
+          <form ref={formRef}>
             <label htmlFor="text">Name</label>
-            <input
-              name="name"
-              value={name}
-              type="text"
-              placeholder="Name"
-              onChange={(e) => setName(e.target.value)}
-            />
+            <input name="name" type="text" placeholder="Name" ref={nameRef} />
 
             <label htmlFor="text">LastName</label>
             <input
-              name="surName"
-              value={surName}
+              name="lastName"
               type="text"
-              placeholder="SurName"
-              onChange={(e) => setSurName(e.target.value)}
+              placeholder="LastName"
+              ref={lastNameRef}
             />
-
-            <label htmlFor="text">Country</label>
+            <label htmlFor="text">Photo</label>
             <input
-              name="country"
-              value={country}
+              name="photo"
               type="text"
-              placeholder="Country"
-              onChange={(e) => setCountry(e.target.value)}
+              placeholder="Photo"
+              ref={photoRef}
             />
-
-            <label htmlFor="text">Phone</label>
-            <input
-              name="mobileNumber"
-              value={mobileNumber}
-              type="tel"
-              placeholder="Phone"
-              onChange={(e) => setMobileNumber(e.target.value)}
-            />
-
+            <label htmlFor="text">Age</label>
+            <input name="age" type="number" placeholder="Age" ref={ageRef} />
             <label htmlFor="email">Email</label>
             <input
-              name="mail"
-              value={mail}
+              name="email"
               type="email"
               placeholder="Email"
-              onChange={(e) => setMail(e.target.value)}
+              ref={emailRef}
             />
-
             <label htmlFor="password">Password</label>
             <input
               name="password"
-              value={password}
               type="password"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              ref={passwordRef}
             />
-
             <div className="bottom">
-
-            <button className='botom-signup' onClick={submit}>Register</button>
-
+              <input
+                onClick={saveData}
+                className="botom-signup"
+                type="button"
+                value="Register"
+              />
             </div>
           </form>
         </div>
