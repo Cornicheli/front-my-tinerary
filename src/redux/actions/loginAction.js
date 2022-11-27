@@ -8,10 +8,32 @@ let getToken = createAsyncThunk("getToken", async (tokenx) => {
   console.log(token.data.response.user)
   let res = token.data.response.user;
   return res;
-});
+})
+
+const logOut = createAsyncThunk('logOut', async(token) =>{
+  let url = `${BASE_URL}/api/auth/signout`
+  let headers = {headers:{'Authorization' : `Bearer ${token}`}}
+  try{
+    let user = await axios.put(url, null, headers)
+    console.log(user.data)
+    return{
+      success: true,
+      response: user.data.message
+    }
+  }catch(error){
+    console.log(error.response)
+    return{
+      success: false,
+      response: error.resp.data.response
+    }
+  }
+})
+
 
 const loginAction = {
   getToken,
+  logOut,
 };
 
 export default loginAction;
+
