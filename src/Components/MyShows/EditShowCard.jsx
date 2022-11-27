@@ -3,8 +3,7 @@ import { BASE_URL } from "../../api/url";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
-import '../../Styles/myShows.css'
-
+import "../../Styles/myShows.css";
 
 export function EditCard({ id }) {
   const [name, setName] = useState("");
@@ -37,7 +36,7 @@ export function EditCard({ id }) {
             className=""
             type="text"
             name="name"
-            onChange={(e) => (setName(e.target.value))}
+            onChange={(e) => setName(e.target.value)}
             min="3"
             placeholder="New Name"
           />
@@ -47,14 +46,20 @@ export function EditCard({ id }) {
           <input
             type="text"
             name="description"
-            onChange={(e) => (setDescription(e.target.value))}
+            onChange={(e) => setDescription(e.target.value)}
             min="3"
             placeholder="New Description"
           />
         </label>
         <label>
           <p>Urls Photos</p>
-          <input className="" onChange={e=> setPhoto(e.target.value)} type="url" name="photo" placeholder="New Image" />
+          <input
+            className=""
+            onChange={(e) => setPhoto(e.target.value)}
+            type="url"
+            name="photo"
+            placeholder="New Image"
+          />
         </label>
         <div className="">
           <input className="btn-update" type="submit" value="Update Show" />
