@@ -8,6 +8,7 @@ import { ButtonNav4 } from "../buttonNav/ButtonNav4";
 import { useDispatch, useSelector } from "react-redux";
 import loginAction from "../../redux/actions/loginAction";
 import Profile from "../Profile/Profile";
+const Swal = require("sweetalert2");
 
 function Header() {
   const dispatch = useDispatch();
@@ -21,6 +22,22 @@ function Header() {
   const SingOut = () => {
     const tokenStorage = localStorage.getItem("token");
     dispatch(loginAction.logOut(tokenStorage));
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You wish to log out!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Closed',
+          'success'
+        )
+      }
+    })
   };
 
   return (
