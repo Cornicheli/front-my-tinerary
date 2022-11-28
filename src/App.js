@@ -32,12 +32,11 @@ function App() {
 
           <Route
             element={
-              <ProtectedRoute isAllowed={!!logged} reDirect={"/signin"} />
-            }
-          >
+              <ProtectedRoute isAllowed={!!logged} reDirect={"/signin"} />}>
             <Route path="/myhotels" element={<MyHotels />} />
             <Route path="/myshows" element={<MyShows />} />
           </Route>
+
         </Routes>
       </MainComplete>
     </BrowserRouter>
