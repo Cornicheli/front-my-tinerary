@@ -8,6 +8,7 @@ import { ButtonNav4 } from "../buttonNav/ButtonNav4";
 import { useDispatch, useSelector } from "react-redux";
 import loginAction from "../../redux/actions/loginAction";
 import Profile from "../Profile/Profile";
+const Swal = require("sweetalert2");
 
 function Header() {
   const dispatch = useDispatch();
@@ -21,6 +22,22 @@ function Header() {
   const SingOut = () => {
     const tokenStorage = localStorage.getItem("token");
     dispatch(loginAction.logOut(tokenStorage));
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You wish to log out!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Closed',
+          'success'
+        )
+      }
+    })
   };
 
   return (
@@ -45,6 +62,10 @@ function Header() {
             <div className="buton-nav-header">
               <ButtonNav3 onClick={SingOut} n10="Sing Out" />
             </div>
+            <div className="buton-nav-header">
+              <h2 className="title">Shows</h2>
+              <ButtonNav4 n11="New Shows"/>
+            </div>
             <Profile />
           </>
         ) : null}
@@ -66,6 +87,10 @@ function Header() {
             <div className="buton-nav-header">
               <h2 className="title">New City or Hotel</h2>
               <ButtonNav4 n7="New Hotel" />
+              <div className="buton-nav-header">
+              <h2 className="title">Shows</h2>
+              <ButtonNav4 n11="New Shows"/>
+            </div>
             </div>
             <Profile />
           </>

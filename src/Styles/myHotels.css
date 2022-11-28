@@ -5,6 +5,7 @@ label{
     display: flex;
     justify-content: center;
     text-align: center;
+    width: 20rem;
 }
 .cont-card-hotels{
     display: flex;
