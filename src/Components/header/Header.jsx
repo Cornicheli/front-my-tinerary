@@ -62,6 +62,10 @@ function Header() {
             <div className="buton-nav-header">
               <ButtonNav3 onClick={SingOut} n10="Sing Out" />
             </div>
+            <div className="buton-nav-header">
+              <h2 className="title">Shows</h2>
+              <ButtonNav4 n11="New Shows"/>
+            </div>
             <Profile />
           </>
         ) : null}
@@ -83,6 +87,10 @@ function Header() {
             <div className="buton-nav-header">
               <h2 className="title">New City or Hotel</h2>
               <ButtonNav4 n7="New Hotel" />
+              <div className="buton-nav-header">
+              <h2 className="title">Shows</h2>
+              <ButtonNav4 n11="New Shows"/>
+            </div>
             </div>
             <Profile />
           </>

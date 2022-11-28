@@ -3,12 +3,14 @@ import axios from "axios";
 import { BASE_URL } from "../api/url";
 import Cards from "../Components/MyShows/ShowCards";
 import '../Styles/myShows.css'
+import { useSelector } from 'react-redux';
 
 export default function MyShows() {
   let [show, setShow] = useState([]);
+  let token = useSelector((store) => store.loginReducer.token)
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/api/myshows?userId=636f39a6a1681cf2906114a5`)
+      .get(`${BASE_URL}/api/myshows?${token.id}`)
       .then((res) => setShow(res.data.response))
       .catch((err) => err.message);
   }, []);

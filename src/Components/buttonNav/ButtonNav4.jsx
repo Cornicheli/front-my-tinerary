@@ -4,7 +4,7 @@ import "../../Styles/ButtonNav.css";
 import { Link as NavLink } from "react-router-dom";
 
 function ButtonNav4(props) {
-  let { n7 } = props;
+  let { n7 , n11 } = props;
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
 
   let hide = () => {
@@ -28,6 +28,15 @@ function ButtonNav4(props) {
               <li className="a">
                 <a className="ancorLink" href="-">
                   {n7}
+                </a>
+              </li>
+            </NavLink>
+          </ul>
+          <ul className="ul">
+            <NavLink to="/newshow">
+              <li className="a">
+                <a className="ancorLink" href="-">
+                  {n11}
                 </a>
               </li>
             </NavLink>

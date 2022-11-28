@@ -11,6 +11,7 @@ import DetailsHotel from "./Components/detailsHotel/DetailsHotel";
 import MyHotels from "./Components/hotelByUser/MyHotels";
 import MyShows from "./Pages/myShows";
 import ProtectedRoute from "./Components/protectedRoute/ProtectedRoute";
+import NewShow from "./Components/newShows/NewShows";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/detailsHotel/:idh" element={<DetailsHotel />} />
+          <Route path='/newshow' element={<NewShow/>}/>
           <Route path="*" element={<NotFound />} />
 
           <Route element={<ProtectedRoute isAllowed={!!admin} reDirect='/'/>}>
