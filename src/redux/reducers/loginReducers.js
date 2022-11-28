@@ -13,7 +13,7 @@ const loginReducer = createReducer(initialState, (login) => {
   login.addCase(loginAction.logOut.fulfilled, (state, action) => {
     const { success } = action.payload;
     if (success) {
-      return { token: " " };
+      return { token: '' };
     }
   });
 });

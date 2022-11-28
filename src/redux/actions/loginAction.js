@@ -13,6 +13,7 @@ let getToken = createAsyncThunk("getToken", async (tokenx) => {
 const logOut = createAsyncThunk('logOut', async(token) =>{
   let url = `${BASE_URL}/api/auth/signout`
   let headers = {headers:{'Authorization' : `Bearer ${token}`}}
+  console.log(token)
   try{
     let user = await axios.put(url, null, headers)
     console.log(user.data)
