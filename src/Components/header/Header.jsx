@@ -5,23 +5,24 @@ import { ButtonNav1 } from "../buttonNav/ButtonNav1";
 import { ButtonNav2 } from "../buttonNav/ButtonNav2";
 import { ButtonNav3 } from "../buttonNav/ButtonNav3";
 import { ButtonNav4 } from "../buttonNav/ButtonNav4";
+import { ButtonNav5 } from "../buttonNav/ButtonNav5";
 import { useDispatch, useSelector } from "react-redux";
 import loginAction from "../../redux/actions/loginAction";
-import Profile from "../Profile/Profile";
 const Swal = require("sweetalert2");
 
 function Header() {
   const dispatch = useDispatch();
   let userData = useSelector((state) => state.loginReducer);
-  let { logged, photo, name } = userData?.token;
-  console.log(logged, photo, name);
+  let name = userData.token.name
+  let photo = userData.token.photo
+  let logged = userData.token.logged
+  console.log(logged)
+  // console.log(logged, photo, name);
 
   let adminData = useSelector((state) => state.loginReducer);
-  let { role } = adminData?.token;
+  let { role } = adminData.token;
 
   const SingOut = () => {
-    const tokenStorage = localStorage.getItem("token");
-    dispatch(loginAction.logOut(tokenStorage));
     Swal.fire({
       title: 'Are you sure?',
       text: "You wish to log out!",
@@ -32,6 +33,9 @@ function Header() {
       confirmButtonText: 'Yes'
     }).then((result) => {
       if (result.isConfirmed) {
+        const tokenStorage = localStorage.getItem("token");
+        dispatch(loginAction.logOut(tokenStorage));
+        localStorage.removeItem("token")
         Swal.fire(
           'Closed',
           'success'
@@ -60,13 +64,16 @@ function Header() {
               <ButtonNav2 n8="My Shows" n9="My Hotels" />
             </div>
             <div className="buton-nav-header">
-              <ButtonNav3 onClick={SingOut} n10="Sing Out" />
+              <h2 className="title">Profile</h2>
+              <ButtonNav5 n11="Profile" />
             </div>
             <div className="buton-nav-header">
+              <ButtonNav3 onClick={SingOut} n10="Sing Out" />
+            </div>
+            {/* <div className="buton-nav-header">
               <h2 className="title">Shows</h2>
               <ButtonNav4 n11="New Shows"/>
-            </div>
-            <Profile />
+            </div> */}
           </>
         ) : null}
 
@@ -81,18 +88,17 @@ function Header() {
               <ButtonNav2 n8="My Shows" n9="My Hotels" />
             </div>
             <div className="buton-nav-header">
+              <h2 className="title">New City or Hotel</h2>
+              <ButtonNav4 n7="New Hotel" n11="New Shows" />
+            </div>
+            <div className="buton-nav-header">
+              <h2 className="title">Profile</h2>
+              <ButtonNav5 n11="Profile" />
+            </div>
+            <div className="buton-nav-header">
               <h2 className="title">SignOut</h2>
               <ButtonNav3 onClick={SingOut} n10="Sing Out" />
             </div>
-            <div className="buton-nav-header">
-              <h2 className="title">New City or Hotel</h2>
-              <ButtonNav4 n7="New Hotel" />
-              <div className="buton-nav-header">
-              <h2 className="title">Shows</h2>
-              <ButtonNav4 n11="New Shows"/>
-            </div>
-            </div>
-            <Profile />
           </>
         ) : null}
       </>

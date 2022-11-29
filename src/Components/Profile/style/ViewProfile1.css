@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+.title-profile{
+  color: black  ;
+}
+.main-profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.wallpaperscraft.com/image/single/city_street_movement_136678_1920x1080.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 65vh;
+}
+.profile-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: auto;
+  flex-grow: 1;
+  width: 100%;
+}
+.col-1-pc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20rem;
+  height: 20rem;
+  padding: .5rem;
+  color: white;
+  opacity: 0.8;
+  background-color: rgba(245, 245, 245, 0.561);
+  border: solid 3px black;
+}
+.col-1-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.profile-pic {
+  width: 125px;
+  height: 125px;
+  border: solid 3px black;
+  border-radius: 100px;
+  object-fit: cover;
+}
+.col-1-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.col-1-links > a {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+.col-1-links > a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  font-weight: 900;
+}
+.col-2-pc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30rem;
+  height: 100%;
+  color: white;
+  opacity: 0.8;
+  background-color: rgba(245, 245, 245, 0.561);
+  margin: 1rem;
+  border: solid 3px black;
+}
+
+.col-2-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.userData-cols {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.col-2-userData-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+}
+.col-2-userData-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px){
+  .col-2-pc{
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 768px){
+  .col-2-pc{
+    width: 19rem;
+  }
+  .col-1-pc{
+    width: 19rem;
+  }
+}

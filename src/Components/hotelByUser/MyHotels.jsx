@@ -6,14 +6,16 @@ import Swal from "sweetalert2";
 import '../../Styles/myHotels.css'
 import myHotelAction from "../../redux/actions/myHotelAction";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 
 export default function MyHotels() {
   let [hotel, setHotel] = useState([]);
-
+  let token = useSelector((store) => store.loginReducer.token)
   useEffect(() => {
       console.log(hotel);
       axios
-          .get(`${BASE_URL}/api/myhotels?userId=636f1edc14f79b76f5e442ba`)
+          .get(`${BASE_URL}/api/myhotels?${token.id}`) //=userId=
           .then((res) => setHotel(res.data.response))
           .catch((err) => err.message);
   }, []);
