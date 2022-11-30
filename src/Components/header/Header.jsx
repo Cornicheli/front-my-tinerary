@@ -7,6 +7,7 @@ import { ButtonNav3 } from "../buttonNav/ButtonNav3";
 import { ButtonNav4 } from "../buttonNav/ButtonNav4";
 import { ButtonNav5 } from "../buttonNav/ButtonNav5";
 import { useDispatch, useSelector } from "react-redux";
+import Profile1 from "../profile1/Profile1";
 import loginAction from "../../redux/actions/loginAction";
 const Swal = require("sweetalert2");
 
@@ -67,13 +68,10 @@ function Header() {
               <h2 className="title">Profile</h2>
               <ButtonNav5 n11="Profile" />
             </div>
+              <Profile1 />
             <div className="buton-nav-header">
               <ButtonNav3 onClick={SingOut} n10="Sing Out" />
             </div>
-            {/* <div className="buton-nav-header">
-              <h2 className="title">Shows</h2>
-              <ButtonNav4 n11="New Shows"/>
-            </div> */}
           </>
         ) : null}
 
@@ -95,8 +93,8 @@ function Header() {
               <h2 className="title">Profile</h2>
               <ButtonNav5 n11="Profile" />
             </div>
+              <Profile1 />
             <div className="buton-nav-header">
-              <h2 className="title">SignOut</h2>
               <ButtonNav3 onClick={SingOut} n10="Sing Out" />
             </div>
           </>
