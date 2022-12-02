@@ -20,7 +20,9 @@ import loginActions from "./redux/actions/loginAction";
 
 function App() {
   let userData = useSelector((state) => state.loginReducer);
-  let { logged, role} = userData?.token;
+  let role = userData.token
+  console.log(role)
+  let logged = userData.token.logged
   console.log(logged)
   let dispatch = useDispatch()
   let {getTokens} = loginActions
@@ -43,7 +45,7 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="*" element={<NotFound />} />
 
-          <Route element={<ProtectedRoute isAllowed={!!admin} reDirect='/'/>}>
+          <Route element={<ProtectedRoute isAllowed={!admin} reDirect='/'/>}>
             <Route path="/new-hotel" element={<NewHotel />} />
           </Route>
 

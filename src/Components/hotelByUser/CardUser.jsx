@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {EditCard} from './EditCard'
 
-export default function Cards({name, photo, description,id}) {
+export default function Cards({name, photo, description,id, erase}) {
     
 let [push,setPush]= useState(false)
 
@@ -17,7 +17,7 @@ return (
             <button className="button-edit-myhotels" value={id} onClick={() => setPush(!push)}>
               Edit
             </button>
-            <button className="button-edit-myhotels">Delete</button>
+            <button onClick={erase} className="button-edit-myhotels">Delete</button>
           </div>
         </article>
       </div>

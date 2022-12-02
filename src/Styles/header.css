@@ -14,3 +14,8 @@
     color: white;
     margin: 0.2rem;
 }
+@media screen and (max-width: 768px){
+    .main-nav-header{
+        flex-wrap: wrap;
+    }
+}

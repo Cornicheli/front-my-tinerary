@@ -2,18 +2,29 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../../Styles/detailsHotel.css";
 import axios from "axios";
+import Comments from "../coments/Comments";
+import NewComments from "../newComment/NewComment";
 
 export default function DetailsHotel() {
   let [hotel, setHotel] = useState([]);
   let [shows, setShows] = useState([]);
-
+  // let [getComments, setGetComments] = useState([])
   let { idh } = useParams();
+
+  let [mostrarOcultar, setMostrarOcultar] = useState(false);
+  let hide = () => {
+  setMostrarOcultar(!mostrarOcultar);}
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/hotels/${idh}`)
       .then((res) => setHotel(res.data.data))
       .catch((error) => console.log(error));
+
+    // axios
+    // .get(`http://localhost:8000/api/comments?showId${idh}`)
+    // .then((res) => setGetComments(res.data.response))
+    // .catch((error) => console.log(error));
 
     axios
       .get(`http://localhost:8000/api/shows?hotelId=${idh}`)
@@ -39,6 +50,7 @@ export default function DetailsHotel() {
             </div>
           </div>
         </div>
+
         {shows.map((e) => {
           return (
             <div className="cont-card-hotel">
@@ -55,9 +67,12 @@ export default function DetailsHotel() {
                   <div className="text-hotel">Show: {e.description}</div>
                 </div>
               </div>
+              <NewComments/>
+              <Comments idShow={e._id}/>
             </div>
           );
-        })}
+        })
+        }
       </>
     );
   }
