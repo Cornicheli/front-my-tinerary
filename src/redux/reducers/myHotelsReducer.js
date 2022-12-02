@@ -5,7 +5,8 @@ const initialState = {};
 
 const myHotelsReducer = createReducer(initialState, (myHotel) => {
   myHotel.addCase(myHotelAction.deleteHotels.fulfilled, (state, action) => {
-    return { ...state };
+    return { ...state,
+    ...action.payload};
   });
 });
 

@@ -1,0 +1,82 @@
+.buttom-see{
+    margin: .2rem;
+}
+.cont-main-comments{
+    display: flex;
+    flex-direction: column;
+    border:solid 4px white;
+    border-radius: .5rem;
+    background-color: black;
+}
+.cont-coment-1{
+    width: 40rem;
+    height: 5rem;
+    margin: .5rem;
+}
+.cont-coment-2{
+    display: flex;
+    height: 100%;
+}
+.cont-info-comment{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.coment-img{
+    border-radius: 50%;
+    width: 15%;
+}
+.photo-comment{
+    border-radius: 50%;
+    width: 85%;
+    height: 65%;
+}
+.cont-date-comment{
+    width: 15%;
+}
+
+@media screen and (max-width: 1024px) {
+    .cont-coment-1{
+        width: 35rem
+    }
+}
+@media screen and (max-width: 768px) {
+    .cont-coment-1{
+        width: 32rem
+    }
+}
+@media screen and (max-width: 630px) {
+    .cont-coment-1{
+        height: 15rem;
+        width: 28rem
+    }
+    .cont-info-comment{
+        width: 100%;
+        height: 45%;
+    }
+    .cont-date-comment{
+        width:30%;
+    }
+    .photo-comment{
+        height: 80%;
+    }
+    .cont-coment-2{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 540px) {
+    .cont-coment-1{
+        flex-direction: column;
+        width: 25rem
+    }
+}
+@media screen and (max-width: 530px) {
+    .cont-coment-1{
+        width: 18rem
+    }
+}
+@media screen and (max-width: 360px) {
+    .cont-coment-1{
+        width: 14rem
+    }
+}

@@ -16,6 +16,8 @@ const hotelsReducers = createReducer(initialState, (builder)=>{
         return {...state, listsHotels:action.payload.listsHotels}
     })
 
+    
+
 })
 
 export default hotelsReducers

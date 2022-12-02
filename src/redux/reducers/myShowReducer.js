@@ -8,5 +8,4 @@ const myShowReducer = createReducer(initialState, (myShow)=>{
         return {...state}
     })
 } )
-
 export default myShowReducer; 
