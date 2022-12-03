@@ -1,7 +1,7 @@
-import {createReducer} from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
 import loginAction from "../actions/loginAction";
 const initialState = {
-  token: "",
+  token: localStorage.getItem("token") || "",
 };
 
 const loginReducer = createReducer(initialState, (login) => {
@@ -13,7 +13,7 @@ const loginReducer = createReducer(initialState, (login) => {
   login.addCase(loginAction.logOut.fulfilled, (state, action) => {
     const { success } = action.payload;
     if (success) {
-      return { token: '' };
+      return { token: "" };
     }
   });
 });

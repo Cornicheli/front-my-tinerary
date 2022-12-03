@@ -8,7 +8,6 @@ import NewComments from "../newComment/NewComment";
 export default function DetailsHotel() {
   let [hotel, setHotel] = useState([]);
   let [shows, setShows] = useState([]);
-  // let [getComments, setGetComments] = useState([])
   let { idh } = useParams();
 
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
@@ -20,11 +19,6 @@ export default function DetailsHotel() {
       .get(`http://localhost:8000/api/hotels/${idh}`)
       .then((res) => setHotel(res.data.data))
       .catch((error) => console.log(error));
-
-    // axios
-    // .get(`http://localhost:8000/api/comments?showId${idh}`)
-    // .then((res) => setGetComments(res.data.response))
-    // .catch((error) => console.log(error));
 
     axios
       .get(`http://localhost:8000/api/shows?hotelId=${idh}`)
@@ -67,7 +61,7 @@ export default function DetailsHotel() {
                   <div className="text-hotel">Show: {e.description}</div>
                 </div>
               </div>
-              <NewComments/>
+              <NewComments id={e._id}/>
               <Comments idShow={e._id}/>
             </div>
           );
