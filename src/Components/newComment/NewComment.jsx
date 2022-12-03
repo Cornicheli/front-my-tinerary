@@ -28,10 +28,11 @@ export default function NewComments(prop) {
         }
         async function publishComment(){
             const dataComment = {
-                showId: showIdRef.current,
+                showId: id,
                 comment: commentRef.current.value,  
-                date: dateRef.current,
+                date: new Date(),
             }
+            console.log(dataComment)
             try{
                 let res = await axios.post(`${BASE_URL}/api/comments/`, dataComment, {headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,

@@ -20,6 +20,7 @@ import loginActions from "./redux/actions/loginAction";
 
 function App() {
   let userData = useSelector((state) => state.loginReducer);
+  console.log(userData.token, '<===')
   let role = userData.token
   console.log(role)
   let logged = userData.token.logged
@@ -28,7 +29,7 @@ function App() {
   let {getTokens} = loginActions
   let admin = role === "admin"
   useEffect(()=>{
-    if(localStorage.getItem('token') != null ){
+    if(localStorage.getItem('token') ){
       const token = localStorage.getItem('token')
       dispatch(getTokens(token))
     }
@@ -49,14 +50,14 @@ function App() {
             <Route path="/new-hotel" element={<NewHotel />} />
           </Route>
 
-          <Route
+          {/* <Route
             element={
-              <ProtectedRoute isAllowed={!!logged} reDirect={"/signin"} />}>
+              <ProtectedRoute isAllowed={!!logged} reDirect={"/signin"} />}> */}
             <Route path="/myhotels" element={<MyHotels />} />
             <Route path="/myshows" element={<MyShows />} />
             <Route path="/profile" element={<ViewProfile1/>}/>
             <Route path="/profile/edit" element={<ViewProfile2/>}/>
-          </Route>
+          {/* </Route> */}
 
         </Routes>
       </MainComplete>

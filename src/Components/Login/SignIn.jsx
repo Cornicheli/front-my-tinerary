@@ -15,7 +15,7 @@ function SignInForm() {
   const pwd = useRef();
   const navigate = useNavigate();
   let store = useSelector((state) => state.loginReducer);
-  console.log(store);
+  console.log(store.token, "<===");
   const dispatch = useDispatch();
   async function submit(e) {
     e.preventDefault();
@@ -29,6 +29,7 @@ function SignInForm() {
       if (res.data.success) {
         let tokenx = res.data.response.token;
         dispatch(loginAction.getToken(tokenx));
+        console.log(tokenx, "tokenx<==");
         localStorage.setItem("token", tokenx);
         Swal.fire({
           title: "Successfully Login",
