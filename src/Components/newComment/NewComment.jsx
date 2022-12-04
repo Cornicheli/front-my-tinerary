@@ -4,6 +4,9 @@ import { React } from 'react';
 import { BASE_URL } from '../../api/url';
 import { useRef } from 'react';
 import Swal from 'sweetalert2'
+import { useDispatch } from 'react-redux';
+import commentAction from '../../redux/actions/commentAction';
+import './NewComment.css'
 
 export default function NewComments(prop) {
     const { id } = prop
@@ -11,6 +14,8 @@ export default function NewComments(prop) {
     const dateRef = useRef(new Date())
     const showIdRef = useRef(id)
     const formRef = useRef()
+    let dispatch = useDispatch();
+    let { getCommentss } = commentAction;
 
     async function submit(e) {
         e.preventDefault();
@@ -40,6 +45,7 @@ export default function NewComments(prop) {
                 })  
                 if(res.data.success){
                     formRef.current.reset()
+                    dispatch(getCommentss(id));
                 return( 
                     Swal.fire('Comment published!', '', 'success')
                     )
@@ -58,10 +64,11 @@ export default function NewComments(prop) {
                 <h2 className='text-center'>Add a new comment</h2>
                 <textarea className='textarea' cols="30" rows="10" placeholder='Write a review...' ref={commentRef}></textarea>
                 <div className='btns-textarea'>
-                <button className='btn-newCom' type="reset">Clean</button>
-                <button className='btn-newCom'>Send</button>
+                <button className='btn-newCom' type="reset"><img className="img-delete-newcomment" src="https://cdn.icon-icons.com/icons2/1367/PNG/512/32officeicons-3_89720.png" alt=""/></button>
+                <button className='btn-newCom'><img className="img-send-newcomment" src="https://cdn.icon-icons.com/icons2/2018/PNG/512/friends_link_send_share_icon_123609.png" alt="" /></button>
                 </div>
             </form>
+            
         </div>
     ) 
     }
