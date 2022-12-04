@@ -15,10 +15,10 @@ export default function MyHotels() {
   useEffect(() => {
       console.log(hotel);
       axios
-          .get(`${BASE_URL}/api/myhotels?${token.id}`) //=userId=
+      .get(`${BASE_URL}/api/myhotels?${token.id}`)
           .then((res) => setHotel(res.data.response))
           .catch((err) => err.message);
-  }, []);
+  },[]);
 
   const dispatch = useDispatch()
   function Delete(e) {
@@ -54,7 +54,6 @@ export default function MyHotels() {
               erase={Delete}
               photo={item.photo}
               key={item._id}
-              id={item._id}
               description={item.capacity}
             />
           ))

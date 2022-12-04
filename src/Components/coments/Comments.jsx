@@ -1,20 +1,26 @@
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
-import { useSelector} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import './Comments.css'
 import '../newComment/NewComment.css'
 import axios from "axios";
 import { BASE_URL } from '../../api/url';
 import Swal from 'sweetalert2'
+import commentAction from "../../redux/actions/commentAction";
 
 
 
 function EditComment(prop) {
-    const { id } = prop
+    const { id, idShow } = prop
     const commentRef = useRef()
     const dateRef = useRef(new Date())
     const showIdRef = useRef(id)
     const formRef = useRef()
+    let dispatch = useDispatch()
+    let { getCommentss } = commentAction;
+
+    let [mostrarOcultar, setMostrarOcultar] = useState(false);
+    let hide = () => {setMostrarOcultar(!mostrarOcultar);};
 
     async function submit(e) {
         e.preventDefault();
@@ -32,7 +38,7 @@ function EditComment(prop) {
         }
         async function publishComment(){
             const dataComment = {
-                showId: id,
+                showId: idShow,
                 comment: commentRef.current.value,  
                 date: new Date(),
             }
@@ -44,6 +50,7 @@ function EditComment(prop) {
                 })  
                 if(res.data.success){
                     formRef.current.reset()
+                    dispatch(getCommentss(idShow))
                 return( 
                     Swal.fire('Comment published!', '', 'success')
                     )
@@ -57,28 +64,32 @@ function EditComment(prop) {
         }
 
     return (
+        
         <div className='text-center'>
-            <form ref={formRef}  onSubmit={submit}>
-                <h2 className='text-center'>Add a new comment</h2>
+            <form className="form-new-comment" ref={formRef}  onSubmit={submit}>
+                <h2 className='text-center-newcomment'>Modify comment</h2>
                 <textarea className='textarea' cols="30" rows="10" placeholder='Write a review...' ref={commentRef}></textarea>
                 <div className='btns-textarea'>
-                <button className='btn-newCom' type="reset">Clean</button>
-                <button className='btn-newCom'>Send</button>
+                <button className='btn-newCom' type="reset"><img className="img-delete-newcomment" src="https://cdn.icon-icons.com/icons2/1367/PNG/512/32officeicons-3_89720.png" alt="" /></button>
+                <button className='btn-newCom'><img className="img-send-newcomment" src="https://cdn.icon-icons.com/icons2/2018/PNG/512/friends_link_send_share_icon_123609.png" alt="" /></button>
                 </div>
             </form>
         </div>
     ) 
-    }
+}
 
 
 export default function Comments({idShow}) {
-const deleteComments = async (id) =>{            try{
+    let dispatch = useDispatch()
+    let { getCommentss } = commentAction;
+    const deleteComments = async (id) =>{            try{
     let res = await axios.delete(`${BASE_URL}/api/comments/${id}`, {headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
     })  
     if(res.data.success){
         console.log("succes")
+        dispatch(getCommentss(idShow))
     return( 
         Swal.fire('Comment published!', '', 'success')
         )
@@ -90,26 +101,23 @@ const deleteComments = async (id) =>{            try{
     Swal.fire(`Error. You must be logged in.`)
 }}
 let userData = useSelector((state) => state.loginReducer);
-console.log(userData.token.id, '<=======')
+let commentsData = useSelector((state) => state.commentReducer);
 let [mostrarOcultar, setMostrarOcultar] = useState(false);
 let hide = () => {
     setMostrarOcultar(!mostrarOcultar);
 };
 console.log(idShow)
 let [getComments, setGetComments] = useState([])
-console.log(getComments, "<======")
-useEffect(()=>{
-    axios
-    .get(`http://localhost:8000/api/comments?showId=${idShow}`)
-    .then((res) => setGetComments(res.data.response))
-    .catch((error) => console.log(error));
-},[idShow])
+useEffect(() => {
+    console.log("entra en comments ", idShow);
+    dispatch(getCommentss(idShow));
+}, [getCommentss, idShow]);
 
 return (
     <div className="cont-main-comments ">
         {mostrarOcultar ? (
             <>
-        {getComments.map((e) => {
+        {commentsData[idShow].map((e) => {
             const isMyUser = e.userId === userData.token.id
             console.log(e, '<==')
         return (
@@ -123,7 +131,7 @@ return (
                     </div>
 
                     <div className="cont-info-comment">
-                        <h4 className="comment">{e.showId}</h4>
+                        <h4 className="comment-title">{e.showId}</h4>
                         <p className="comment">{e.comment}</p>
                     </div>
 
@@ -131,8 +139,8 @@ return (
                         <p>{e.date}</p>
                     </div>
                 </div>
-                {isMyUser &&  <EditComment id={e._id}/>}      
-                { isMyUser && <button onClick={() => deleteComments(e._id)}>Delete</button> }
+                {isMyUser &&  <EditComment id={e._id} idShow={idShow}/>}      
+                { isMyUser && <button className="btn-comment-delete" onClick={() => deleteComments(e._id)}>Delete</button> }
             </div>
             )
         })

@@ -3,9 +3,8 @@ import { BASE_URL } from "../../api/url";
 import axios from "axios";
 
 const deleteHotels = createAsyncThunk("deleteHotels", async (id) => {
-  let url = `${BASE_URL}/api/hotels/${id}`;
   try {
-    await axios.delete(url);
+    await axios.delete(`${BASE_URL}/api/hotels/${id}`);
     return {
       success: true,
     };
