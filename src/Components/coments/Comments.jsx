@@ -66,6 +66,16 @@ function EditComment(prop) {
     return (
         
         <div className='text-center'>
+            {mostrarOcultar ? ( 
+            <>
+            <img
+            className="img"
+            onClick={hide}
+            src="https://cdn.icon-icons.com/icons2/1129/PNG/512/morecircularbuttoninterfacesymbolofthreehorizontaldots_79906.png"
+            width="45"
+            height="30"
+            alt="-"
+            />
             <form className="form-new-comment" ref={formRef}  onSubmit={submit}>
                 <h2 className='text-center-newcomment'>Modify comment</h2>
                 <textarea className='textarea' cols="30" rows="10" placeholder='Write a review...' ref={commentRef}></textarea>
@@ -74,6 +84,17 @@ function EditComment(prop) {
                 <button className='btn-newCom'><img className="img-send-newcomment" src="https://cdn.icon-icons.com/icons2/2018/PNG/512/friends_link_send_share_icon_123609.png" alt="" /></button>
                 </div>
             </form>
+        </>
+        ) : (
+            <img
+            className="img"
+            onClick={hide}
+            src="https://cdn.icon-icons.com/icons2/1129/PNG/512/morecircularbuttoninterfacesymbolofthreehorizontaldots_79906.png"
+            width="45"
+            height="30"
+            alt="-"
+            />
+        )}
         </div>
     ) 
 }
@@ -109,7 +130,7 @@ let hide = () => {
 console.log(idShow)
 let [getComments, setGetComments] = useState([])
 useEffect(() => {
-    console.log("entra en comments ", idShow);
+    // console.log("entra en comments ", idShow);
     dispatch(getCommentss(idShow));
 }, [getCommentss, idShow]);
 
@@ -119,7 +140,7 @@ return (
             <>
         {commentsData[idShow].map((e) => {
             const isMyUser = e.userId === userData.token.id
-            console.log(e, '<==')
+
         return (
             <div className={ isMyUser ? 'cont-coment-1 myuser-comment' : 'cont-coment-1'}>
                 <div className="buttom-see">
@@ -127,11 +148,11 @@ return (
                 </div>
                 <div className="cont-coment-2">
                     <div className="coment-img">
-                        <img className="photo-comment"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Kho8pBqY0yP1iudgMp6_2YHvRMv79PvoMg&usqp=CAU"alt="logo-profile"/>
+                        <img className="photo-comment"src="https://avatars.githubusercontent.com/u/107517584?v=4" alt="logo-profile"/>
                     </div>
 
                     <div className="cont-info-comment">
-                        <h4 className="comment-title">{e.showId}</h4>
+                        <h4 className="comment-title">Gabriel</h4>
                         <p className="comment">{e.comment}</p>
                     </div>
 
