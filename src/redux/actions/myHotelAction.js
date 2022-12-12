@@ -14,6 +14,7 @@ const deleteHotels = createAsyncThunk("deleteHotels", async (id) => {
     };
   }
 });
+
 const myHotelAction = {
   deleteHotels,
 };

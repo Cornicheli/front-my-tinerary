@@ -27,6 +27,7 @@ export function EditCard({ id }) {
       }
     });
   };
+
   return (
     <div>
       <form className="form-shows" onSubmit={submit}>
@@ -52,7 +53,7 @@ export function EditCard({ id }) {
           />
         </label>
         <label>
-          <p>Urls Photos</p>
+          <p>Url Photos</p>
           <input
             className=""
             onChange={(e) => setPhoto(e.target.value)}

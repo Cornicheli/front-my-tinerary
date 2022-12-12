@@ -7,4 +7,5 @@ function ProtectedRoute({ isAllowed, children, reDirect }) {
   }
   return children ? children : <Outlet />;
 }
-export default  ProtectedRoute
+
+export default ProtectedRoute;
