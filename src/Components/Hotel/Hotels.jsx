@@ -12,7 +12,6 @@ export default function Hotels() {
 
   useEffect(() => {
     dispatch(hotelActions.getHotels());
-    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     let filter = {
@@ -20,7 +19,6 @@ export default function Hotels() {
       order: order,
     };
     dispatch(hotelActions.getHotelsFilters(filter));
-    // eslint-disable-next-line
   }, [search, order]);
 
   function DataFetching() {
