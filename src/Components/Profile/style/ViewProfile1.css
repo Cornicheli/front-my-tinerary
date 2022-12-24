@@ -1,18 +1,18 @@
 * {
   box-sizing: border-box;
 }
-.title-profile{
-  color: black  ;
+.title-profile {
+  color: black;
 }
-.main-profile{
+.main-profile {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://images.wallpaperscraft.com/image/single/city_street_movement_136678_1920x1080.jpg');
+  background-image: url("https://images.wallpaperscraft.com/image/single/city_street_movement_136678_1920x1080.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  min-height: 65vh;
+  min-height: 67vh;
 }
 .profile-card {
   display: flex;
@@ -30,7 +30,7 @@
   flex-direction: column;
   width: 20rem;
   height: 20rem;
-  padding: .5rem;
+  padding: 0.5rem;
   color: white;
   background-color: rgba(245, 245, 245, 0.561);
   border: solid 3px black;
@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .profile-pic {
   width: 125px;
@@ -71,7 +71,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 30rem;
+  width: 31rem;
   height: 100%;
   color: white;
   background-color: rgba(245, 245, 245, 0.561);
@@ -107,16 +107,16 @@
   width: 100%;
 }
 
-@media screen and (max-width: 1024px){
-  .col-2-pc{
+@media screen and (max-width: 1024px) {
+  .col-2-pc {
     width: 25rem;
   }
 }
-@media screen and (max-width: 768px){
-  .col-2-pc{
+@media screen and (max-width: 768px) {
+  .col-2-pc {
     width: 19rem;
   }
-  .col-1-pc{
+  .col-1-pc {
     width: 19rem;
   }
 }
