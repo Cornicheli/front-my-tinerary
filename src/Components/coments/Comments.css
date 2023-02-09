@@ -1,0 +1,125 @@
+.buttom-see {
+  margin: 0.2rem;
+}
+.comment-title{
+  font-size: 1.3rem;
+  text-decoration: underline;
+  margin: .3rem;
+}
+.coment{
+  font-size: 1.1rem;
+}
+.cont-main-comments {
+  display: flex;
+  flex-direction: column;
+  border: solid 4px white;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.753);
+  height: fit-content;
+}
+.form-new-comment{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: .5rem;
+}
+.text-center-newcomment{
+  margin: .7rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.cont-coment-1 {
+  background-color: rgba(255, 255, 255, 0.274);
+  border-radius: .5rem;
+  border: solid 5px black;
+  padding: .7rem;
+  width: 40rem;
+  margin: 0.5rem;
+}
+.cont-coment-2 {
+  display: flex;
+  height: 100%;
+}
+.cont-info-comment {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border: solid 4px white;
+  border-radius: .5rem;
+  padding: 10px;
+}
+.coment-img {
+  border-radius: 50%;
+  width: 15%;
+}
+.photo-comment {
+  border-radius: 50%;
+  width: 85%;
+  height: 65%;
+  border: solid 4px white;
+}
+.myuser-comment {
+  font-weight: 800;
+}
+.cont-date-comment {
+  width: 15%;
+}
+.btn-comment-delete{
+  color: white;
+  background-color: black;
+  border: solid 3px white ;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  margin: .2rem;
+  padding: 4px;
+}
+.btn-comment-delete:hover{
+    background-color: white;
+    color: black;
+    border: solid 2px red;
+    font-size: 1.2rem;
+}
+@media screen and (max-width: 1024px) {
+  .cont-coment-1 {
+    width: 35rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cont-coment-1 {
+    width: 32rem;
+  }
+}
+@media screen and (max-width: 630px) {
+  .cont-coment-1 {
+    width: 28rem;
+  }
+  .cont-info-comment {
+    width: 100%;
+    height: 45%;
+  }
+  .cont-date-comment {
+    width: 30%;
+  }
+  .photo-comment {
+    height: 80%;
+  }
+  .cont-coment-2 {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 540px) {
+  .cont-coment-1 {
+    flex-direction: column;
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 530px) {
+  .cont-coment-1 {
+    width: 18rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .cont-coment-1 {
+    width: 14rem;
+  }
+}

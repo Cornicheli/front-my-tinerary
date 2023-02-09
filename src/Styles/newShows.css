@@ -1,0 +1,59 @@
+.contenedor-form-shows{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    min-height: 75vh;
+    flex-wrap: wrap;
+    background: url('https://astelus.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.form-new-shows{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    height: 30rem;
+    margin: 2.5rem;
+    border: solid 3px black;
+    border-radius: 1rem;
+    opacity: 0.8;
+    background-color: rgba(245, 245, 245, 0.561);
+}
+
+.inputin{
+    border: none;
+    border-bottom: #000000 solid 1px;
+    background-color: transparent;
+    color: white;
+}
+.submit-show{
+    width: 75px;
+    height: 100%;
+    background-color: #8B95C9;
+    font-size: 1rem;
+    color: #020122;
+    border-radius: 15px;
+    font-weight: 700;  
+    text-decoration: none;
+}
+
+.container-submit{
+display: flex;
+width: 100%;
+justify-content: center;
+align-items: center;
+height: 8%;
+}
+.container-newcity{
+    background: rgb(51,181,184);
+    background: linear-gradient(180deg, rgba(51,181,184,1) 17%, rgba(245,201,155,1) 89%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2em;
+}

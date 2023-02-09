@@ -1,0 +1,90 @@
+label{
+    text-decoration: none;
+}
+.cont-main-myhotels{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 20rem;
+}
+.cont-card-hotels{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 80vh;
+}
+.cont-my-hotels{
+    background-image: url('https://pixelz.cc/wp-content/uploads/2018/12/costa-adeje-gran-hotel-pool-spain-uhd-4k-wallpaper.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-myhotels{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    opacity: 0.8;
+    background-color: rgba(245, 245, 245, 0.561);
+    min-height: 40vh;
+}
+.text-myhotels{
+    text-align: center;
+    margin: .5rem;
+}
+.cont-card-myhotels{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: .7rem;
+}
+.text-title-myhotels{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    min-height: 12vh;
+}
+.button-edit-myhotels{
+    margin: .5rem;
+    width: 4rem;
+    height: 2rem;
+    border-radius: .5rem;
+}
+.button-edit-myhotels:hover{
+    background-color: black;
+    border: solid 2px white;
+    color: white;
+}
+.cont-text-myhotels{
+    margin: .5rem;
+}
+.text-title{
+    color: black;
+}
+.photo-myhotels{
+    width: 100%;
+    background-size: cover;
+    border: solid 5px black;
+    border-radius: 1rem;
+    opacity: 1;
+}
+.buton-card-myhotels{
+    width: 25%;
+    height: 2rem;
+}
+.cont-edit-myhotels{
+    border: solid 4px black;
+    background-color: rgba(245, 245, 245, 0.453);
+    margin: .5rem;
+}
+.main-myhotels{
+    border: solid 4px black;
+    margin: .5rem;
+}
+@media screen and (max-width: 768px){
+    .main-myhotels{
+        flex-direction: column;
+    }
+}
