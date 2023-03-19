@@ -1,86 +1,74 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
-h2{
-    font-size: 2rem;
-    text-decoration: underline;
+h2 {
+  font-size: 2rem;
+  text-decoration: underline;
 }
-.content-singup{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url('https://wallpaperaccess.com/full/1369012.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 80vh;
-    width: 100%;
+.content-singup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://wallpaperaccess.com/full/1369012.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+  width: 100%;
 }
-.content-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30rem;
-    margin: 1rem;
-    border-radius: 1rem;
-    border: solid 3px black;
-    background-color: rgba(245, 245, 245, 0.453);
-    opacity: .9;
+.content-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  border: solid 3px black;
+  background-color: rgba(245, 245, 245, 0.453);
+  opacity: 0.9;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    width: 20rem;
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
 }
-label{
-    text-align: center;
-    font-size: 1.3rem;
-    margin: .4rem;
-    color: black;
-    text-decoration: underline;
-    font-weight: 800;
+label {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0.4rem;
+  color: black;
+  text-decoration: underline;
+  font-weight: 800;
 }
-input{
-    height: 1.5rem;
-    border-radius: .7rem;
-    text-align: center;
-    margin: .5rem;
-    box-shadow: 3px 4px 4px black;
+.bottom {
+  font-size: 1.1rem;
+  text-align: center;
 }
-input:hover{
-    color: white;
-    background-color: black;
-    font-size: 1.2rem;
+.botom-signup {
+  font-weight: 700;
+  font-size: 1.3rem;
+  height: 2.3rem;
+  width: 6.5rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
 }
-.bottom{
-    font-size: 1.1rem;
-    text-align: center;
+.botom-signup:hover {
+  color: rgb(22, 93, 104);
+  width: 7.3rem;
+  text-decoration: underline;
+  font-size: 1.5rem;
 }
-.botom-signup{
-    font-weight: 700;
-    font-size: 1.3rem;
-    height: 2.3rem;
-    width: 6.5rem;
-    border-radius: .5rem;
-    margin: .5rem;
-}
-.botom-signup:hover{
-    color: rgb(22, 93, 104);
-    width: 7.3rem;
-    text-decoration: underline;
-    font-size: 1.5rem;
-}
-@media screen and (max-width: 768px){
-    .content-form{
-        width: 18rem;
-    }
-    form{
-        width: 17rem;
-    }
-    input{
-        width: 15rem;
-    }
+@media screen and (max-width: 768px) {
+  .content-form {
+    width: 18rem;
+  }
+  form {
+    width: 17rem;
+  }
+  input {
+    width: 15rem;
+  }
 }

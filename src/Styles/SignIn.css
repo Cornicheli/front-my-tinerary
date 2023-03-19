@@ -1,95 +1,82 @@
-*{
-margin:0%;
-padding: 0%;
-box-sizing: border-box;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
-.singin-form{
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.762);
+.singin-form {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.762);
 }
-.title-singin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 45%;
-    width: 100%;
+.title-singin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 45%;
+  width: 100%;
 }
-.sigin-body-cont{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('https://i.redd.it/0frpmc4w9gm41.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover ;
-    min-height: 75vh;
-}
-
-.contenedor-form-signin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25rem;
-    height: 30rem;
-    margin: 2.5rem;
-    border: solid 3px black;
-    border-radius: 1rem;
-    opacity: 0.8;
-    background-color: rgba(245, 245, 245, 0.561);
+.sigin-body-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://i.redd.it/0frpmc4w9gm41.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 75vh;
 }
 
-.cont-form-singin{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50%;
+.contenedor-form-signin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 30rem;
+  margin: 2.5rem;
+  border: solid 3px black;
+  border-radius: 1rem;
+  opacity: 0.8;
+  background-color: rgba(245, 245, 245, 0.561);
 }
 
-.form-signin{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 65%;
+.cont-form-singin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
 }
 
-.submit-singin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 30%;
-    width: 100%;
+.form-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65%;
 }
 
-.button-google{
-    height: 2.5rem;
-    width: 75%;
+.submit-singin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 100%;
 }
 
-.button-google:hover{
-    color: white;
-    background-color: black;
-    font-size: 1.2rem;
-    height: 2.5rem;
-    width: 75%;
+.submit2-singin-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  height: 2rem;
+  margin: 1rem;
+  width: 50%;
 }
 
-.submit2-singin-google{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-    height: 2rem;
-    margin: 1rem;
-    width: 50%;
-}
-
-.submit2-singin-google:hover{
-    color: white;
-    background-color: black;
-    font-size: 1.2rem;
+.submit2-singin-google:hover {
+  color: white;
+  background-color: black;
+  font-size: 1.2rem;
 }

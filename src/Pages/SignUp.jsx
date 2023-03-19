@@ -1,5 +1,6 @@
 import { React, useRef } from "react";
 import "../Styles/SignUp.css";
+import { Inputs } from "../Components/assets/Input";
 import { BASE_URL } from "../api/url";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -57,39 +58,39 @@ export default function Input() {
           <h2>Sign Up</h2>
           <form ref={formRef}>
             <label htmlFor="text">Name</label>
-            <input name="name" type="text" placeholder="Name" ref={nameRef} />
+            <Inputs name="name" type="text" placeholder="Name" ref={nameRef} />
             <label htmlFor="text">LastName</label>
-            <input
+            <Inputs
               name="lastName"
               type="text"
               placeholder="LastName"
               ref={lastNameRef}
             />
             <label htmlFor="text">Photo</label>
-            <input
+            <Inputs
               name="photo"
               type="text"
               placeholder="Photo"
               ref={photoRef}
             />
             <label htmlFor="text">Age</label>
-            <input name="age" type="number" placeholder="Age" ref={ageRef} />
+            <Inputs name="age" type="number" placeholder="Age" ref={ageRef} />
             <label htmlFor="email">Email</label>
-            <input
+            <Inputs
               name="email"
               type="email"
               placeholder="Email"
               ref={emailRef}
             />
             <label htmlFor="password">Password</label>
-            <input
+            <Inputs
               name="password"
               type="password"
               placeholder="Password"
               ref={passwordRef}
             />
             <div className="bottom">
-              <input
+              <Inputs
                 onClick={saveData}
                 className="botom-signup"
                 type="button"
