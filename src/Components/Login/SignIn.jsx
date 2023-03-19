@@ -1,6 +1,7 @@
 import { React, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { InputLogin } from "../assets/Input";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { BASE_URL } from "../../api/url";
@@ -66,16 +67,14 @@ function SignInForm() {
 
           <div className="cont-form-singin">
             <form className="form-signin">
-              <input
-                className="button-google"
+              <InputLogin
                 type="email"
                 autoComplete="current-email"
                 placeholder="Email"
                 ref={email}
               />
 
-              <input
-                className="button-google"
+              <InputLogin
                 type="password"
                 autoComplete="on"
                 placeholder="Password"
