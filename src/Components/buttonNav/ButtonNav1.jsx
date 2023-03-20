@@ -1,41 +1,53 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
-import "../../Styles/ButtonNav.css";
-import { Link as NavLink } from "react-router-dom";
+import { LinksNav, ListLi, ListUl, StyledLink } from "../assets/Headers";
+
+import { aboveArrow, belowArow } from "../../constants/img";
 
 function ButtonNav1(props) {
+  let { n4, n5 } = props;
+  let [mostraryOcultar, setMostraryOcultar] = useState(false);
 
-    let {n4, n5} = props;
-    let [mostraryOcultar, setMostraryOcultar] = useState(false);
-
-    let hidee = () =>{
-        setMostraryOcultar(!mostraryOcultar)
-    }
-return(
+  let hidee = () => {
+    setMostraryOcultar(!mostraryOcultar);
+  };
+  return (
     <div>
-        {mostraryOcultar ? (
-            <>
-                <img className="img" onClick={hidee} src="https://cdn-icons-png.flaticon.com/512/3240/3240696.png"  width="40" height="30"alt="-" />
-                <ul className="ul">
+      {mostraryOcultar ? (
+        <>
+          <img
+            className="img"
+            onClick={hidee}
+            src={aboveArrow}
+            width="40"
+            height="30"
+            alt="-"
+          />
+          <ListUl>
+            <StyledLink to="/">
+              <ListLi>
+                <LinksNav>{n5}</LinksNav>
+              </ListLi>
+            </StyledLink>
 
-                    <NavLink to="/">
-                        <li className="b">
-                            <a className="ancorLink" href="-">{n5}</a>
-                        </li>
-                    </NavLink>
-
-                    <NavLink to="/hotels">
-                        <li className="a">
-                            <a className="ancorLink" href="-">{n4}</a>
-                        </li>
-                    </NavLink>
-
-                </ul>
-            </>
-        ) : (
-            <img className="img" onClick={hidee} src="https://cdn-icons-png.flaticon.com/512/3240/3240694.png"  width="40" height="30" alt="-" />
-        )}
+            <StyledLink to="/hotels">
+              <ListLi>
+                <LinksNav>{n4}</LinksNav>
+              </ListLi>
+            </StyledLink>
+          </ListUl>
+        </>
+      ) : (
+        <img
+          className="img"
+          onClick={hidee}
+          src={belowArow}
+          width="40"
+          height="30"
+          alt="-"
+        />
+      )}
     </div>
-);
+  );
 }
-export {ButtonNav1}
+export { ButtonNav1 };

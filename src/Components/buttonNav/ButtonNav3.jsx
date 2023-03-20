@@ -1,15 +1,15 @@
 import React from "react";
-import "../../Styles/ButtonNav.css";
+import { ListUl } from "../assets/Headers";
 
 function ButtonNav3(props) {
   const { onClick } = props;
 
   return (
-    <ul className="ul">
+    <ListUl>
       <button onClick={onClick} className="button-singout">
         SignOut
       </button>
-    </ul>
+    </ListUl>
   );
 }
 export { ButtonNav3 };

@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import "../../Styles/ButtonNav.css";
-import { Link as NavLink } from "react-router-dom";
+import { aboveArrow, belowArow } from "../../constants/img";
+import { LinksNav, ListLi, ListUl, StyledLink } from "../assets/Headers";
 
 function ButtonNav2(props) {
-  let {n8, n9} = props;
+  let { n8, n9 } = props;
   let [mostrarOcultar, setMostrarOcultar] = useState(false);
 
   //funcion para mostrar el menu
@@ -19,29 +19,29 @@ function ButtonNav2(props) {
           <img
             className="img"
             onClick={hide}
-            src="https://cdn-icons-png.flaticon.com/512/3240/3240696.png"
+            src={aboveArrow}
             width="40"
             height="30"
             alt="-"
           />
-          <ul className="ul">
-                    <NavLink to="/myhotels">
-                        <li className="b">
-                            <a className="ancorLink" href="-">{n9}</a>
-                        </li>
-                    </NavLink>
-                    <NavLink to="/myshows">
-                        <li className="a">
-                            <a className="ancorLink" href="-">{n8}</a>
-                        </li>
-                    </NavLink>
-          </ul>
+          <ListUl>
+            <StyledLink to="/myhotels">
+              <ListLi>
+                <LinksNav>{n9}</LinksNav>
+              </ListLi>
+            </StyledLink>
+            <StyledLink to="/myshows">
+              <ListLi>
+                <LinksNav>{n8}</LinksNav>
+              </ListLi>
+            </StyledLink>
+          </ListUl>
         </>
       ) : (
         <img
           className="img"
           onClick={hide}
-          src="https://cdn-icons-png.flaticon.com/512/3240/3240694.png"
+          src={belowArow}
           width="40"
           height="30"
           alt="-"
@@ -50,4 +50,4 @@ function ButtonNav2(props) {
     </div>
   );
 }
-export { ButtonNav2};
+export { ButtonNav2 };

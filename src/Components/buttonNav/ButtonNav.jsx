@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import "../../Styles/ButtonNav.css";
-import { Link as NavLink } from "react-router-dom";
+import { aboveArrow, belowArow } from "../../constants/img";
+import { LinksNav, ListLi, ListUl, StyledLink } from "../assets/Headers";
 
 function ButtonNav(props) {
   let { n1, n2 } = props;
@@ -19,29 +19,29 @@ function ButtonNav(props) {
           <img
             className="img"
             onClick={hide}
-            src="https://cdn-icons-png.flaticon.com/512/3240/3240696.png"
+            src={aboveArrow}
             width="40"
             height="30"
             alt="-"
           />
-          <ul className="ul">
-                    <NavLink to="/SignIn">
-                        <li className="a">
-                            <a className="ancorLink" href="-">{n1}</a>
-                        </li>
-                    </NavLink>
-                    <NavLink to="/signup">
-                        <li className="b">
-                            <a className="ancorLink" href="-">{n2}</a>
-                        </li>
-                    </NavLink>
-          </ul>
+          <ListUl>
+            <StyledLink to="/SignIn">
+              <ListLi>
+                <LinksNav>{n1}</LinksNav>
+              </ListLi>
+            </StyledLink>
+            <StyledLink to="/signup">
+              <ListLi>
+                <LinksNav>{n2}</LinksNav>
+              </ListLi>
+            </StyledLink>
+          </ListUl>
         </>
       ) : (
         <img
           className="img"
           onClick={hide}
-          src="https://cdn-icons-png.flaticon.com/512/3240/3240694.png"
+          src={belowArow}
           width="40"
           height="30"
           alt="-"
