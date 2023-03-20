@@ -9,13 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 import Profile1 from "../profile1/Profile1";
 import loginAction from "../../redux/actions/loginAction";
 import { CtnBtn, CtnHeaders } from "../assets/Headers";
+import { TitleLink } from "../assets/Fonts";
+
 const Swal = require("sweetalert2");
 
 function Header() {
   const dispatch = useDispatch();
   let userData = useSelector((state) => state.loginReducer);
-  let name = userData.token.name;
-  let photo = userData.token.photo;
   let logged = userData.token.logged;
   console.log(logged);
   // console.log(logged, photo, name);
@@ -47,22 +47,22 @@ function Header() {
       <>
         {logged ? null : (
           <CtnBtn>
-            <h2 className="title">Login - Register</h2>
+            <TitleLink>Login - Register</TitleLink>
             <ButtonNav n1="Sign In" n2="Sign Up" />
           </CtnBtn>
         )}
         {logged && role === "user" ? (
           <>
             <CtnBtn>
-              <h2 className="title">Pages</h2>
+              <TitleLink>Pages</TitleLink>
               <ButtonNav1 n4="Hotels" n5="Home" />
             </CtnBtn>
             <CtnBtn>
-              <h2 className="title">City or Hotel</h2>
+              <TitleLink>City or Hotel</TitleLink>
               <ButtonNav2 n8="My Shows" n9="My Hotels" />
             </CtnBtn>
             <CtnBtn>
-              <h2 className="title">Profile</h2>
+              {/* <TitleLink>Profile</TitleLink> */}
               <ButtonNav5 n11="Profile" />
             </CtnBtn>
             <Profile1 />
@@ -75,19 +75,19 @@ function Header() {
         {logged && role === "admin" ? (
           <>
             <CtnBtn>
-              <h2 className="title">Pages</h2>
+              <TitleLink>Pages</TitleLink>
               <ButtonNav1 n4="Hotels" n5="Home" />
             </CtnBtn>
             <CtnBtn>
-              <h2 className="title">City or Hotel</h2>
+              <TitleLink>City or Hotel</TitleLink>
               <ButtonNav2 n8="My Shows" n9="My Hotels" />
             </CtnBtn>
             <CtnBtn>
-              <h2 className="title">New City or Hotel</h2>
+              <TitleLink>New City or Hotel</TitleLink>
               <ButtonNav4 n7="New Hotel" n11="New Shows" />
             </CtnBtn>
             <CtnBtn>
-              <h2 className="title">Profile</h2>
+              <TitleLink>Profile</TitleLink>
               <ButtonNav5 n11="Profile" />
             </CtnBtn>
             <Profile1 />
