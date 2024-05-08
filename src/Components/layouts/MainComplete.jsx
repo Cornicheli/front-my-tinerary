@@ -8,7 +8,7 @@ export default function main(props) {
     <div className="Home">
       <AutoToTop />
       <Header />
-      <div className="div-main">{props.children}</div>
+      <div >{props.children}</div>
       <Footer />
     </div>
   );
