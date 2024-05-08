@@ -1,69 +1,86 @@
-*{
+* {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
 }
-.main-hotel{
+
+.hotels-container {
+  flex: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+}
+
+/* .main-hotel {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   background-color: #171717;
-}
-.card-hotel{
+} */
+
+.card-hotel {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  width: 50rem;
-  height: 33rem;
+  width: 30rem;
+  height: 25rem;
   border: solid 4px black;
 }
-.img-card-hotel{
+
+.img-card-hotel {
   width: 100%;
-  height:85%;
+  height: 85%;
 }
-.text-hotel-card{
+
+.text-hotel-card {
   margin: .3rem;
   text-align: center;
 }
 
-@media screen and (max-width: 1024px){
-  .card-hotel{
+@media screen and (max-width: 1024px) {
+  .card-hotel {
     width: 45rem;
     height: 33rem;
   }
-  .filter-hotel{
+
+  .filter-hotel {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 768px){
-  .card-hotel{
+
+@media screen and (max-width: 768px) {
+  .card-hotel {
     width: 35rem;
     height: 30rem;
   }
 }
-@media screen and (max-width: 630px){
-  .card-hotel{
+
+@media screen and (max-width: 630px) {
+  .card-hotel {
     width: 30rem;
     height: 25rem;
   }
 }
-@media screen and (max-width: 525px){
-  .card-hotel{
+
+@media screen and (max-width: 525px) {
+  .card-hotel {
     width: 25rem;
     height: 23rem;
   }
 }
-@media screen and (max-width: 440px){
-  .card-hotel{
+
+@media screen and (max-width: 440px) {
+  .card-hotel {
     width: 20rem;
     height: 20rem;
   }
 }
-@media screen and (max-width: 350px){
-  .card-hotel{
+
+@media screen and (max-width: 350px) {
+  .card-hotel {
     width: 17rem;
     height: 20rem;
   }

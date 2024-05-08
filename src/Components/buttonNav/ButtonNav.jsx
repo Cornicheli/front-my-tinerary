@@ -25,16 +25,16 @@ function ButtonNav(props) {
             alt="-"
           />
           <ul className="ul">
-                    <NavLink to="/SignIn">
-                        <li className="a">
-                            <a className="ancorLink" href="-">{n1}</a>
-                        </li>
-                    </NavLink>
-                    <NavLink to="/signup">
-                        <li className="b">
-                            <a className="ancorLink" href="-">{n2}</a>
-                        </li>
-                    </NavLink>
+            <NavLink to="/SignIn">
+              <li className="a">
+                <a className="ancorLink" href="-">{n1}</a>
+              </li>
+            </NavLink>
+            <NavLink to="/signup">
+              <li className="b">
+                <a className="ancorLink" href="-">{n2}</a>
+              </li>
+            </NavLink>
           </ul>
         </>
       ) : (

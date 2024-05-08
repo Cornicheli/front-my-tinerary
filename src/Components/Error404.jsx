@@ -1,6 +1,6 @@
 import React from "react";
 import "../Styles/error404.css";
-import {Link as LinkNav} from "react-router-dom";
+import { Link as LinkNav } from "react-router-dom";
 
 export default function Error404() {
   return (
@@ -19,11 +19,12 @@ export default function Error404() {
             Again{" "}
           </div>
 
-          <div className="msg1">
-            {" "}
-            <LinkNav className="Home-btn" to={`/`}> Home</LinkNav>
+          <div classNa me="msg1">
+            <LinkNav className="Home-btn" to={`/`}>
+              {" "}
+              Home
+            </LinkNav>
           </div>
-          
         </div>
       </div>
     </>

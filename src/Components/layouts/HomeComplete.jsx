@@ -1,11 +1,8 @@
 import React from "react";
-import Home1 from "../../Pages/Home1";
+import { Home1 } from "../../Pages/Home1";
 
-function HomeComplete() {
+export const HomeComplete = () => {
   return (
-    <>
-      <Home1 />
-    </>
+    <Home1 />
   );
 }
-export default HomeComplete;
