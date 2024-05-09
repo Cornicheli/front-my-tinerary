@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { InputProfile } from "../../InputProfile";
 
 export default function EditProfile() {
     let token = useSelector((store) => store.loginReducer.token);
@@ -72,11 +73,43 @@ export default function EditProfile() {
         <>
             <div className="header-columns-edit">
                 <div className="col-2-header2">
-                    <h2 className="title-profile">Your Profile</h2>
+                    <h2 className="text-xl no-underline h-6 text-white text-center">Your Profile Edit</h2>
                 </div>
-                <div className="col-3-header">
+            </div>
+            <div className="userData-cols">
+                <form id="myform" className="col-2-userData-1-2">
+                    <InputProfile
+                        title={'Name :'}
+                        value={user.name}
+                        type={'text'}
+                        ref={name}
+                    />
+                    <InputProfile
+                        title={'LastName :'}
+                        value={user.lastName}
+                        type={'text'}
+                        ref={lastName}
+                    />
+                    <InputProfile
+                        title={'Photo :'}
+                        value={user.photo}
+                        type={'text'}
+                        ref={photo}
+                    />
+                    <InputProfile
+                        title={'Age :'}
+                        value={user.age}
+                        type={'text'}
+                        ref={age}
+                    />
+                    <InputProfile
+                        title={'Email :'}
+                        value={user.email}
+                        type={'text'}
+                        ref={email}
+                    />
                     <button
-                        className="btn-edit-profile"
+                        className=" w-64 py-2 px-4 bg-black focus:ring-offset-blue-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                         form="myform"
                         onClick={(e) =>
                             Swal.fire({
@@ -98,22 +131,6 @@ export default function EditProfile() {
                     >
                         Submit Changes
                     </button>
-                </div>
-            </div>
-            <div className="userData-cols">
-                <form id="myform" className="col-2-userData-1-2">
-                    <label> Name: </label>
-                    <input type="text" placeholder={`${user.name}`} ref={name} />
-                    <label> LastName: </label>
-                    <input type="text" placeholder={`${user.lastName}`} ref={lastName} />
-                    <label> Photo: </label>
-                    <input type="text" placeholder={`${user.photo}`} ref={photo} />
-                </form>
-                <form className="col-2-userData-2-2">
-                    <label> Age: </label>
-                    <input type="number" placeholder={`${user.age}`} ref={age} />
-                    <label> Email: </label>
-                    <input type="text" placeholder={`${user.email}`} ref={email} />
                 </form>
             </div>
         </>

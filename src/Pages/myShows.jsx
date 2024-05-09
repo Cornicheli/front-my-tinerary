@@ -16,25 +16,25 @@ export default function MyShows() {
   }, []);
 
   return (
-      <>
+    <>
       <div className="body-show">
-      <div className="title-show">
-        <h1>My Shows</h1>
-      </div>
-      <div className="cards-shows">
-      {show.length > 0 ? (
-        show.map(iteracion => (
-          <Cards
-            name={iteracion.name}
-            photo={iteracion.photo}
-            description={iteracion.description}
-            id={iteracion._id}
-          />
-        ))
-      ) : (
-        <h2 className="title2">Shows not found</h2>
-      )}
-      </div>
+
+        <h1 className="text-5xl text-center my-10">Shows Edit</h1>
+
+        <div className="grid grid-cols-4 gap-4 m-4">
+          {show.length > 0 ? (
+            show.map(iteracion => (
+              <Cards
+                name={iteracion.name}
+                photo={iteracion.photo}
+                description={iteracion.description}
+                id={iteracion._id}
+              />
+            ))
+          ) : (
+            <h2 className="title2">Shows not found</h2>
+          )}
+        </div>
       </div>
     </>
   );

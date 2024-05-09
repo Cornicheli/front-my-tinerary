@@ -14,32 +14,23 @@ function ButtonNav5(props) {
   return (
     <div>
       {mostrarOcultar ? (
-        <>
-          <img
-            className="img"
-            onClick={hide}
-            src="https://cdn-icons-png.flaticon.com/512/3240/3240696.png"
-            width="40"
-            height="30"
-            alt="-"
-          />
-          <ul className="ul">
-            <NavLink to="/profile">
-              <li className="a">
-                <a className="ancorLink" href="-">
-                  {n11}
-                </a>
-              </li>
-            </NavLink>
-          </ul>
-        </>
+
+        <ul className="ul">
+          <NavLink to="/profile">
+            <li className="a">
+              <a className="ancorLink" href="-">
+                {n11}
+              </a>
+            </li>
+          </NavLink>
+        </ul>
       ) : (
         <img
           className="img"
           onClick={hide}
           src="https://cdn-icons-png.flaticon.com/512/3240/3240694.png"
-          width="40"
-          height="30"
+          width="25"
+          height="25"
           alt="-"
         />
       )}

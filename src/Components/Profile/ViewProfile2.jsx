@@ -1,11 +1,11 @@
 import EditProfile from "./components/EditProfile";
 import { NavLink } from "react-router-dom";
-import "./style/ViewProfile2.css";
 import { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../api/url";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import './style/ViewProfile.css'
 
 export default function ViewProfile2() {
   const [user, setUser] = useState([]);
@@ -21,25 +21,19 @@ export default function ViewProfile2() {
     };
   }, []);
   return (
-    <div className="main-profile">
-      <div className="profile-card">
-        <div className="col-1-pc2">
-          <div className="col-1-profile">
-            <div>
-              <img className="profile-pic" src={`${user.photo}`} />
-            </div>
-            <div className="profile-name">
-              <h2 className="title-profile">{`${user.name}`}</h2>
-            </div>
-            <div className="col-1-links2">
-              <NavLink to={"/Profile"}>Profile</NavLink>
-              <hr />
-              <NavLink to={"./"}>Edit Profile</NavLink>
-            </div>
-          </div>
+    <div className='main-profile'>
+      <div className="flex flex-col items-center relative rounded-xl bg-neutral-100 bg-clip-border shadow-md">
+        <div className="flex flex-row items-center justify-around">
+          <NavLink className='text-3xl font-semibold text-gray-700 mx-2 p-2' to={"/Profile"}>Profile</NavLink>
+
+          <NavLink className='text-3xl font-semibold text-gray-700 mx-2 p-2' to={"./"}>Edit Profile</NavLink>
         </div>
-        <div className="col-2-pc2">
+        <div className='flex items-center flex-row px-2 py-5 mx-4'>
+          <div className='w-72 h-72 rounded-full border-2'>
+            <img className="w-full h-full rounded-full border-2" src={`${user.photo}`} alt="profile-pic" />
+          </div>
           <EditProfile />
+
         </div>
       </div>
     </div>

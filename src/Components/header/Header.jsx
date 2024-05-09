@@ -65,10 +65,9 @@ function Header() {
               <ButtonNav2 n8="My Shows" n9="My Hotels" />
             </div>
             <div className="buton-nav-header">
-              <h2 className="title">Profile</h2>
               <ButtonNav5 n11="Profile" />
             </div>
-              <Profile1 />
+            <Profile1 />
             <div className="buton-nav-header">
               <ButtonNav3 onClick={SingOut} n10="Sing Out" />
             </div>
@@ -93,7 +92,7 @@ function Header() {
               <h2 className="title">Profile</h2>
               <ButtonNav5 n11="Profile" />
             </div>
-              <Profile1 />
+            <Profile1 />
             <div className="buton-nav-header">
               <ButtonNav3 onClick={SingOut} n10="Sing Out" />
             </div>

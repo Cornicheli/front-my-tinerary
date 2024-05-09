@@ -1,0 +1,10 @@
+.main-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.wallpaperscraft.com/image/single/city_street_movement_136678_1920x1080.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 65vh;
+}

@@ -1,7 +1,8 @@
-.title-show{
+.title-show {
     text-align: center;
 }
-.body-show{
+
+.body-show {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -12,79 +13,89 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.cont-img-show{
+
+.cont-img-show {
     height: 15rem;
     width: 22rem;
     border: solid 3px black;
     border-radius: .5rem;
 }
-.photo-show{
+
+.photo-show {
     border-radius: .5rem;
     width: 100%;
     height: 100%;
 }
-.cont-show{
+
+.cont-show {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: .5rem;
     padding: .7rem;
-    border: solid 4px black;
-    width: 25rem;
-    min-height: 33rem;
+    border: solid 2px black;
+    min-height: 30rem;
     background-color: rgba(245, 245, 245, 0.561);
     border-radius: 1rem;
 }
-.cont-info-show{
+
+.cont-info-show {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.form-shows{
+
+.form-shows {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cards-shows{
+
+.cards-shows {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1024px){
-    .cont-show{
+@media screen and (max-width: 1024px) {
+    .cont-show {
         width: 25rem;
         min-height: 30rem;
     }
 }
-@media screen and (max-width: 768px){
-    .cont-show{
+
+@media screen and (max-width: 768px) {
+    .cont-show {
         width: 22rem;
         min-height: 30rem;
     }
-    .cont-img-show{
+
+    .cont-img-show {
         width: 20rem;
     }
 }
-@media screen and (max-width: 768px){
-    .cont-show{
+
+@media screen and (max-width: 768px) {
+    .cont-show {
         width: 20rem;
         min-height: 30rem;
     }
-    .cont-img-show{
+
+    .cont-img-show {
         height: 12rem;
         width: 18rem;
     }
 }
-@media screen and (max-width: 768px){
-    .cont-show{
+
+@media screen and (max-width: 768px) {
+    .cont-show {
         width: 18rem;
         min-height: 30rem;
     }
-    .cont-img-show{
+
+    .cont-img-show {
         height: 10rem;
         width: 16rem;
     }

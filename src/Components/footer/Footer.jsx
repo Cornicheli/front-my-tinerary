@@ -1,17 +1,11 @@
 import React from "react";
 import "../../Styles/footer.css";
 import "../../Styles/arrow.css";
-import { Link as NavLink } from "react-router-dom";
 import { FooterToTop } from "../Arrow";
 
 function Footer() {
   return (
     <footer>
-      <div className="contenedorBoton">
-        <NavLink to="/hotels">
-          <button className="botom">Hotel</button>
-        </NavLink>
-      </div>
       <div className="date">
         <h3>Information</h3>
         <p>Monday to Friday. 10am - 21pm.</p>

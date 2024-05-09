@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { EditCard } from "./EditShowCard";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import myShowAction from "../../redux/actions/myShowAction";
 import "../../Styles/myShows.css";
 import Swal from "sweetalert2";
@@ -33,14 +33,18 @@ export default function Cards({ name, photo, description, id }) {
       <div className="cont-img-show">
         <img className="photo-show" src={photo} alt={name} height="250" />
       </div>
-      <article className="cont-info-show">
+      <article className="flex flex-col items-center justify-between">
         <h4 className="text-title">{name}</h4>
         <p className="text-title">Capacity: {description}</p>
-        <div>
-          <button className="button-edit-myhotels" value={id} onClick={() => setPush(!push)}>
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            value={id} onClick={() => setPush(!push)}
+            className="select-none w-40 rounded-xl bg-black py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
             Edit
           </button>
-          <button className="button-edit-myhotels" value={id} onClick={(e) => deleteIt(id)}>
+          <button
+            value={id} onClick={(e) => deleteIt(id)}
+            className="select-none w-40 rounded-xl bg-black py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-gray-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
             Delete
           </button>
         </div>
